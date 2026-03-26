@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wildlife Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+    <h1>🌿 Wildlife Sanctuary</h1>
+    <p class="subtitle">Database Management Dashboard</p>
+</header>
+
+<main>
+
+    <!-- TABLE SELECTOR -->
+    <section class="card">
+        <h2>📋 Select Table</h2>
+        <div class="row">
+            <select id="tableSelect"></select>
+            <button id="btnShow">Show Records</button>
+        </div>
+    </section>
+
+    <!-- ADD RECORD -->
+    <section class="card">
+        <h2>➕ Add Record</h2>
+        <div id="addFields" class="fields-grid"></div>
+        <button id="btnAdd">Add Record</button>
+        <div id="addMsg" class="msg"></div>
+    </section>
+
+    <!-- DELETE RECORD -->
+    <section class="card">
+        <h2>🗑️ Delete Record</h2>
+        <div class="row">
+            <div class="field-group">
+                <label>Column</label>
+                <select id="delCol"></select>
+            </div>
+            <div class="field-group">
+                <label>Value to Delete</label>
+                <input id="delVal" placeholder="Enter value">
+            </div>
+            <button id="btnDel">Delete</button>
+        </div>
+        <div id="delMsg" class="msg"></div>
+    </section>
+
+    <!-- UPDATE RECORD -->
+    <section class="card">
+        <h2>✏️ Update Record</h2>
+        <div class="row">
+            <div class="field-group">
+                <label>Column</label>
+                <select id="updCol"></select>
+            </div>
+            <div class="field-group">
+                <label>Old Value</label>
+                <input id="oldVal" placeholder="Enter old value">
+            </div>
+            <div class="field-group">
+                <label>New Value</label>
+                <input id="newVal" placeholder="Enter new value">
+            </div>
+            <button id="btnUpd">Update</button>
+        </div>
+        <div id="updMsg" class="msg"></div>
+    </section>
+
+    <!-- FIRST / LAST -->
+    <section class="card">
+        <h2>⏩ First / Last Record</h2>
+        <div class="row">
+            <button id="btnFirst">First Record</button>
+            <button id="btnLast">Last Record</button>
+        </div>
+    </section>
+
+    <!-- CALCULATION -->
+    <section class="card">
+        <h2>🔢 Calculation</h2>
+        <div class="row">
+            <div class="field-group">
+                <label>Column</label>
+                <select id="calcCol"></select>
+            </div>
+            <div class="field-group">
+                <label>Function</label>
+                <select id="func">
+                    <option>COUNT</option>
+                    <option>AVG</option>
+                    <option>SUM</option>
+                    <option>MIN</option>
+                    <option>MAX</option>
+                </select>
+            </div>
+            <button id="btnCalc">Run</button>
+        </div>
+    </section>
+
+    <!-- SEARCH RECORD -->
+    <section class="card">
+        <h2>🔍 Search Record</h2>
+        <div class="row">
+            <div class="field-group">
+                <label>Column</label>
+                <select id="searchCol"></select>
+            </div>
+            <div class="field-group">
+                <label>Value</label>
+                <input id="searchVal" placeholder="Enter value">
+            </div>
+            <button id="btnSearch">Search</button>
+        </div>
+        <div id="searchMsg" class="msg"></div>
+    </section>
+
+    <!-- CUSTOM QUERY -->
+    <section class="card">
+        <h2>💻 Custom SQL Query</h2>
+        <textarea id="sqlQuery" placeholder="Enter SQL query here..." rows="4"></textarea>
+        <button id="btnQuery">Execute Query</button>
+        <div id="queryMsg" class="msg"></div>
+    </section>
+
+    <!-- OUTPUT -->
+    <section class="card">
+        <h2>📊 Results</h2>
+        <div id="output">Select a table and click "Show Records" to view data.</div>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html> 
