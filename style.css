@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap');
+
+:root {
+    --green-dark: #1b4332;
+    --green-mid: #2d6a4f;
+    --green-light: #52b788;
+    --green-pale: #d8f3dc;
+    --accent: #f4a261;
+    --white: #fafff8;
+    --text: #1b2f1e;
+    --text-muted: #4a6550;
+    --border: #b7e4c7;
+    --shadow: 0 4px 24px rgba(27,67,50,0.10);
+    --radius: 14px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--white);
+    color: var(--text);
+    min-height: 100vh;
+    background-image:
+        radial-gradient(ellipse at 10% 0%, #b7e4c755 0%, transparent 50%),
+        radial-gradient(ellipse at 90% 100%, #52b78822 0%, transparent 50%);
+}
+
+/* ── Header ── */
+header {
+    background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 100%);
+    color: white;
+    text-align: center;
+    padding: 36px 20px 28px;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    letter-spacing: -0.5px;
+    position: relative;
+}
+
+header .subtitle {
+    margin-top: 6px;
+    font-size: 0.95rem;
+    color: var(--green-pale);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    position: relative;
+}
+
+/* ── Main ── */
+main {
+    max-width: 860px;
+    margin: 32px auto;
+    padding: 0 20px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* ── Cards ── */
+.card {
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px 28px;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s;
+}
+
+.card:hover {
+    box-shadow: 0 8px 32px rgba(27,67,50,0.14);
+}
+
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    color: var(--green-dark);
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--green-pale);
+}
+
+/* ── Row layout ── */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 12px;
+}
+
+/* ── Field groups ── */
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    min-width: 140px;
+}
+
+.field-group label {
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+}
+
+/* ── Add fields grid ── */
+.fields-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.fields-grid .field-group {
+    min-width: 160px;
+}
+
+/* ── Inputs & Selects ── */
+input, select {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.95rem;
+    padding: 9px 12px;
+    border: 1.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+    width: 100%;
+}
+
+input:focus, select:focus {
+    border-color: var(--green-light);
+    box-shadow: 0 0 0 3px rgba(82,183,136,0.15);
+}
+
+/* ── Buttons ── */
+button {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 500;
+    font-size: 0.92rem;
+    padding: 10px 20px;
+    background: var(--green-mid);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    white-space: nowrap;
+    align-self: flex-end;
+}
+
+button:hover {
+    background: var(--green-dark);
+}
+
+button:active {
+    transform: scale(0.97);
+}
+
+/* ── Table ── */
+.table-wrap {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9rem;
+}
+
+thead tr {
+    background: var(--green-dark);
+    color: white;
+}
+
+th {
+    padding: 11px 14px;
+    text-align: left;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    white-space: nowrap;
+}
+
+td {
+    padding: 10px 14px;
+    border-bottom: 1px solid var(--green-pale);
+    color: var(--text);
+}
+
+tbody tr:hover {
+    background: #f0faf3;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* ── Status messages ── */
+.msg {
+    margin-top: 10px;
+    font-size: 0.88rem;
+    font-weight: 500;
+    min-height: 22px;
+    transition: opacity 0.3s;
+}
+
+.msg.success { color: var(--green-mid); }
+.msg.error   { color: #c62828; }
+
+/* ── Calc result ── */
+.calc-result {
+    font-size: 1.05rem;
+    color: var(--text);
+    padding: 12px 16px;
+    background: var(--green-pale);
+    border-radius: 8px;
+    display: inline-block;
+}
+
+.calc-func { font-weight: 700; color: var(--green-dark); }
+.calc-col  { font-style: italic; color: var(--text-muted); }
+
+/* ── Empty state ── */
+.empty {
+    color: var(--text-muted);
+    font-style: italic;
+    padding: 10px 0;
+}
+
+/* ── Output section default text ── */
+#output {
+    color: var(--text-muted);
+    font-style: italic;
+    min-height: 40px;
+}
+
+#outputCard h2 { margin-bottom: 14px; }
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    header h1 { font-size: 1.8rem; }
+    .card { padding: 18px 16px; }
+    .row { flex-direction: column; }
+    button { width: 100%; }
+}
